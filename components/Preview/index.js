@@ -1,31 +1,25 @@
 import { marked } from "marked";
 import { mangle } from "marked-mangle";
-import { gfmHeadingId } from "marked-gfm-heading-id";
+import Prism from "prismjs";
 
 export default function Preview({ defaultText }) {
 	marked.use(mangle());
 
-	const options = {
-		prefix: "my-prefix-",
-	};
-	marked.use(gfmHeadingId(options));
-
 	marked.use({
-		async: false,
-		baseUrl: null,
-		breaks: false,
-		extensions: null,
+		breaks: true,
 		gfm: true,
-		highlight: null,
-		mangle: false,
-		xhtml: false,
+		highlight: function (code) {
+			return Prism.highlight(code, Prism.languages.javascript, "javascript");
+		},
 	});
 
 	const markdownText = marked.parse(defaultText);
 	return (
-		<section id="preview">
-			<h2>Markdown-Preview</h2>
-			<div dangerouslySetInnerHTML={{ __html: markdownText }}></div>
+		<section>
+			<h2>Preview</h2>
+			<div
+				id="preview"
+				dangerouslySetInnerHTML={{ __html: markdownText }}></div>
 		</section>
 	);
 }

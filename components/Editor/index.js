@@ -3,8 +3,8 @@ export default function Editor({ defaultText, handleChange }) {
 		<section>
 			<h2>Write your Code here:</h2>
 			<textarea
-				type="text"
 				id="editor"
+				type="text"
 				rows="14"
 				defaultValue={defaultText}
 				onChange={handleChange}></textarea>
