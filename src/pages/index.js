@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Editor from "../../components/Editor";
 import Preview from "../../components/Preview";
+import "../styles/globals.css";
 
 export default function Home({ defaultText, handleChange }) {
 	return (

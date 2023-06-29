@@ -24,6 +24,7 @@ export default function Preview({ defaultText }) {
 	const markdownText = marked.parse(defaultText);
 	return (
 		<section id="preview">
+			<h2>Markdown-Preview</h2>
 			<div dangerouslySetInnerHTML={{ __html: markdownText }}></div>
 		</section>
 	);
