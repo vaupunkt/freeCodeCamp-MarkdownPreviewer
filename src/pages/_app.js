@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 import { useState } from "react";
+import "../../components/Preview/Preview.style.css";
+import "../../components/Editor/Editor.style.css";
 
 export default function App({ Component, pageProps }) {
 	const defaultText =
