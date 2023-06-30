@@ -24,6 +24,10 @@ export default function Home({ defaultText, handleChange }) {
 				<Editor defaultText={defaultText} handleChange={handleChange}></Editor>
 				<Preview defaultText={defaultText}></Preview>
 			</Main>
+			<p>
+				FreeCodeCamp-Project by{" "}
+				<a href="https://github.com/vaupunkt/">vaupunkt</a>
+			</p>
 		</>
 	);
 }
